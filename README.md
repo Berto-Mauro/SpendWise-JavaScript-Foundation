@@ -1,486 +1,84 @@
-# SpendWise – JavaScript Foundation
+# SpendWise Dashboard
 
-## Project Overview
+## 1. Project Title
 
-SpendWise is a personal finance dashboard designed to help users understand and manage their monthly budget, income, spending, savings, and expenses. The project was initially created as a visual dashboard using HTML and CSS. The dashboard contains a sidebar, financial summary cards, spending categories, recent transactions, and a monthly budget section.
+**pendWise – Personal Finance Management Dashboard**
 
-For this assignment, JavaScript has been added to the existing SpendWise project. The purpose of adding JavaScript is to transform the dashboard from a mainly visual interface into a basic application that can collect information, process data, perform calculations, and display results.
+## 2. Project Description
 
-The existing HTML and CSS structure has been maintained. JavaScript is added through a separate external file called `script.js`.
+SpendWise is a responsive personal finance management dashboard developed to help individuals monitor their income, expenses, monthly budgets and savings.
 
-## Project Files
+The application provides a simple interface where users can view their financial summaries, monitor spending categories, add new expenses and generate budget reports.
 
-The project contains the following files:
+The main goal of this project is to make personal financial management easier through technology.
 
-```text
-SpendWise/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+## 3. Technologies Used
 
-### `index.html`
+The project was developed using:
 
-The `index.html` file contains the structure and content of the SpendWise dashboard. It includes the sidebar navigation, financial summary cards, spending categories, recent transactions, and footer.
+- **HTML5:** Provides the structure of the dashboard.
+- **CSS3:** Provides styling, CSS Grid, Flexbox, dark mode and responsive design.
+- **JavaScript:** Provides interactive features, expense calculations, conditional statements, arrays, loops and DOM manipulation.
+- **Git and GitHub:** Used for version control and project storage.
+- **Netlify:** Used for website hosting and continuous deployment.
 
-The JavaScript file is connected externally to the HTML document using:
+## 4. GitHub Repository Information
 
-```html
-<script src="script.js" defer></script>
-```
+GitHub Username: Berto-Mauro
 
-The `defer` attribute allows the JavaScript file to load without blocking the HTML page from being displayed.
+Repository Name: spendwise-dashboard
 
-### `style.css`
+Repository URL: [https://github.com/Berto-Mauro/spendwise-dashboard](https://github.com/Berto-Mauro/spendwise-dashboard)
 
-The `style.css` file contains the existing visual design of the SpendWise dashboard. It uses CSS Grid for the overall dashboard and category layouts and Flexbox for different sections such as the navigation, header, and cards.
+## 5. Live Netlify Website
 
-The CSS was kept separate from JavaScript so that the project follows a clear separation between structure, presentation, and behavior.
+Live Website URL: [ [https://pendwise.netlify.app/](https://pendwise.netlify.app/) ]
 
-### `script.js`
+## 6. Deployment Process Summary
 
-The `script.js` file contains the JavaScript functionality required for this assignment. It stores budgeting information, collects user input, performs calculations, validates the input, and displays the results in the browser console.
+The SpendWise project was deployed using GitHub and Netlify.
 
-### `README.md`
+First, I organized the project files into a single folder containing index.html, style.css, script.js and README.md.
 
-This file explains what the SpendWise project does and describes the JavaScript concepts used in the application.
+Second, I created a public GitHub repository and uploaded all the project files.
 
----
+Third, I connected my GitHub repository to Netlify and configured the deployment settings. Since the project uses HTML, CSS and JavaScript without a build framework, I left the build command empty and selected the project root as the publish directory.
 
-# JavaScript Concepts Implemented
+After deployment, I customized the default Netlify subdomain to give my website a meaningful name.
 
-The JavaScript foundation of SpendWise demonstrates several important JavaScript concepts covered in this week's lessons.
+I also tested continuous deployment by making a visible change to the application, pushing the update to GitHub and confirming that Netlify automatically published the changes.
 
-## Variables
+Finally, I tested the live website to ensure that the styles, scripts and dashboard features worked correctly.
 
-Variables are used to store information that the application needs to work with.
+## 7. Challenges Encountered During Deployment
 
-The SpendWise application stores important financial information using variables such as:
+Some challenges encountered during the deployment process included:
 
-```javascript
-let monthlyBudget = 50000;
-let monthlySpending = 57800;
-let monthlyIncome = 85000;
-```
+- Organizing the project files correctly before uploading them.
+- Understanding how to connect GitHub with Netlify.
+- Configuring the correct deployment settings for a static website.
+- Understanding how automatic deployment works after updating GitHub.
+- Checking that CSS and JavaScript files load correctly on the live website.
 
-These variables represent the monthly budget, monthly spending, and monthly income.
+These challenges helped me improve my understanding of website hosting and deployment.
 
-The project also uses constants for information that does not need to change:
+## 8. Lessons Learned
 
-```javascript
-const currency = "KSh";
-const appName = "SpendWise";
-```
+Through this project, I learned how to move a website from a local computer to the internet using GitHub and Netlify.
 
-The `let` keyword is used for values that can change when the user enters new information. The `const` keyword is used for values that remain constant during the program.
+I improved my understanding of GitHub repositories, version control, website hosting and continuous deployment.
 
-For example, when the user enters a different monthly budget, the value stored in `monthlyBudget` can be updated.
+I also learned how to organize project files, configure deployment settings, customize a website URL and test a live application.
 
----
+Most importantly, I understood that updating a GitHub repository can automatically update a website hosted on Netlify.
 
-# Data Types
+This project has improved my practical web development skills and prepared me to deploy more advanced web applications in the future.
 
-The application uses different JavaScript data types.
+## 9. Author
 
-### Numbers
+**Berto Taban**
 
-Financial values are stored as numbers:
+Project: SpendWise Dashboard
 
-```javascript
-let monthlyBudget = 50000;
-let monthlySpending = 57800;
-let monthlyIncome = 85000;
-```
+Year: 2026
 
-Numbers are important because the application needs to perform mathematical calculations with these values.
-
-### Strings
-
-Text information is stored as strings:
-
-```javascript
-const currency = "KSh";
-const appName = "SpendWise";
-```
-
-Strings are also used when displaying messages in the browser console.
-
-### Boolean Results
-
-The program uses conditions to determine whether the user's spending is within the budget or has exceeded it.
-
-For example:
-
-```javascript
-if (remainingBalance >= 0) {
-    console.log("Status: You are within your budget.");
-}
-```
-
-The comparison produces a Boolean result that is either `true` or `false`.
-
----
-
-# Collecting User Input
-
-SpendWise collects information directly from the user using JavaScript's `prompt()` function.
-
-The application asks the user to enter their monthly budget:
-
-```javascript
-const budgetInput = prompt(
-    "Enter your monthly budget in KSh:",
-    monthlyBudget
-);
-```
-
-The application then asks the user to enter their current monthly spending:
-
-```javascript
-const spendingInput = prompt(
-    "Enter your current monthly spending in KSh:",
-    monthlySpending
-);
-```
-
-The values returned by `prompt()` are treated as text. Since budgeting calculations require numbers, the application converts the input into numbers using `Number()`:
-
-```javascript
-const budget = Number(budgetInput);
-const spending = Number(spendingInput);
-```
-
-This allows the application to use the information in mathematical calculations.
-
----
-
-# Input Validation
-
-The application checks the information entered by the user before performing calculations.
-
-The program checks whether:
-
-* The user cancelled the prompt.
-* The entered values are valid numbers.
-* The budget is not negative.
-* The spending amount is not negative.
-
-The validation helps prevent incorrect data from being used in the calculations.
-
-For example:
-
-```javascript
-if (
-    budgetInput === null ||
-    spendingInput === null ||
-    !Number.isFinite(budget) ||
-    !Number.isFinite(spending) ||
-    budget < 0 ||
-    spending < 0
-) {
-    console.log("SpendWise: Please enter valid positive numbers for the budget and spending.");
-    return;
-}
-```
-
-If the input is invalid, the program stops the calculation and displays an appropriate message in the console.
-
----
-
-# Budget Calculations
-
-The main calculation performed by SpendWise is the remaining balance.
-
-The application uses the following formula:
-
-```text
-Remaining Balance = Monthly Budget - Monthly Spending
-```
-
-This calculation is implemented using the function:
-
-```javascript
-function calculateRemainingBalance(budget, spending) {
-    return budget - spending;
-}
-```
-
-For example, if the monthly budget is KSh 50,000 and monthly spending is KSh 35,000:
-
-```text
-KSh 50,000 - KSh 35,000 = KSh 15,000
-```
-
-Therefore, the remaining balance is KSh 15,000.
-
----
-
-# Calculating Budget Usage
-
-SpendWise also calculates the percentage of the budget that has been used.
-
-The formula is:
-
-```text
-Budget Used = (Monthly Spending / Monthly Budget) × 100
-```
-
-This is implemented using:
-
-```javascript
-function calculateBudgetUsage(budget, spending) {
-    if (budget <= 0) {
-        return 0;
-    }
-
-    return (spending / budget) * 100;
-}
-```
-
-The check for a budget of zero or less prevents the application from attempting an invalid division.
-
-For example, if the budget is KSh 50,000 and spending is KSh 25,000:
-
-```text
-(25,000 / 50,000) × 100 = 50%
-```
-
-The user has therefore used 50% of the monthly budget.
-
----
-
-# Reusable Functions
-
-Functions are used to organize the JavaScript code into smaller and reusable sections.
-
-SpendWise contains several functions.
-
-## `calculateRemainingBalance()`
-
-This function calculates the amount of money remaining after spending:
-
-```javascript
-function calculateRemainingBalance(budget, spending) {
-    return budget - spending;
-}
-```
-
-It accepts the budget and spending as parameters and returns the calculated balance.
-
-## `calculateBudgetUsage()`
-
-This function calculates the percentage of the budget that has been used:
-
-```javascript
-function calculateBudgetUsage(budget, spending) {
-    if (budget <= 0) {
-        return 0;
-    }
-
-    return (spending / budget) * 100;
-}
-```
-
-Using a function makes this calculation reusable whenever the application needs it.
-
-## `displayBudgetResult()`
-
-This function organizes the budget results and displays them in the browser console.
-
-It calculates:
-
-* Monthly budget
-* Monthly spending
-* Remaining balance
-* Percentage of budget used
-* Budget status
-
-It also provides a different message when the user has exceeded their budget.
-
-## `collectBudgetInput()`
-
-This function is responsible for collecting information from the user.
-
-It:
-
-1. Opens the budget prompt.
-2. Opens the spending prompt.
-3. Converts the input to numbers.
-4. Validates the information.
-5. Updates the budgeting variables.
-6. Sends the information to the calculation function.
-
-Using a separate function for input makes the code easier to understand and maintain.
-
----
-
-# Displaying Results
-
-The assignment requires the calculated results to be displayed in the browser console.
-
-SpendWise uses `console.log()` to display clearly labeled results.
-
-The console output includes:
-
-```text
-===== SpendWise Budget Report =====
-Monthly Budget: KSh 50000.00
-Monthly Spending: KSh 35000.00
-Remaining Balance: KSh 15000.00
-Budget Used: 70.00%
-Status: You are within your budget.
-```
-
-If the spending is greater than the budget, the application instead reports that the budget has been exceeded and shows the amount exceeded.
-
-This makes it possible to verify that the JavaScript calculations are working correctly.
-
----
-
-# How the Application Works
-
-The basic flow of the SpendWise JavaScript application is:
-
-```text
-Open SpendWise
-      ↓
-Load script.js
-      ↓
-Store initial budgeting data
-      ↓
-Ask user for monthly budget
-      ↓
-Ask user for monthly spending
-      ↓
-Convert input to numbers
-      ↓
-Validate the input
-      ↓
-Calculate remaining balance
-      ↓
-Calculate percentage used
-      ↓
-Determine budget status
-      ↓
-Display results in browser console
-```
-
-This process demonstrates how JavaScript can take user input, process information, and produce useful results.
-
----
-
-# Testing the Application
-
-The application should be tested using different values to make sure the calculations work correctly.
-
-### Test 1: Spending Below Budget
-
-Example:
-
-```text
-Monthly Budget: KSh 50,000
-Monthly Spending: KSh 30,000
-```
-
-Expected result:
-
-```text
-Remaining Balance: KSh 20,000
-Budget Used: 60%
-Status: You are within your budget.
-```
-
-### Test 2: Spending Equal to Budget
-
-Example:
-
-```text
-Monthly Budget: KSh 50,000
-Monthly Spending: KSh 50,000
-```
-
-Expected result:
-
-```text
-Remaining Balance: KSh 0
-Budget Used: 100%
-Status: You are within your budget.
-```
-
-### Test 3: Spending Above Budget
-
-Example:
-
-```text
-Monthly Budget: KSh 50,000
-Monthly Spending: KSh 60,000
-```
-
-Expected result:
-
-```text
-Remaining Balance: KSh -10,000
-Budget Used: 120%
-```
-
-The application reports that the budget has been exceeded by KSh 10,000.
-
-### Test 4: Invalid Input
-
-The application can also be tested by entering invalid information, such as text instead of a number or a negative amount.
-
-The program should reject the invalid input and display an error message in the browser console.
-
----
-
-# How to View the Console Results
-
-To view the JavaScript results:
-
-1. Open `index.html` in a web browser.
-2. Enter the requested budget information in the prompts.
-3. Right-click on the webpage.
-4. Select **Inspect**.
-5. Open the **Console** tab.
-6. View the SpendWise budget report.
-
-The console will show the calculated financial information and the status of the budget.
-
----
-
-# Technologies Used
-
-The project uses:
-
-* **HTML5** – for the structure of the SpendWise dashboard.
-* **CSS3** – for the visual design, layout, CSS Grid, Flexbox, and responsive styling.
-* **JavaScript** – for variables, data types, user input, calculations, validation, functions, and console output.
-* **GitHub** – for storing and submitting the project repository.
-
----
-
-# Assignment Requirements Completed
-
-The JavaScript foundation addresses the assignment requirements as follows:
-
-| Requirement                 | Implementation                                                |
-| --------------------------- | ------------------------------------------------------------- |
-| Set Up JavaScript           | External `script.js` file linked to `index.html`              |
-| Store Application Data      | Budget, spending, income, currency, and application variables |
-| Collect User Input          | JavaScript `prompt()`                                         |
-| Perform Budget Calculations | Remaining balance and budget usage percentage                 |
-| Create Reusable Functions   | Calculation, input, and display functions                     |
-| Display Results             | Clearly labeled output using `console.log()`                  |
-| README Documentation        | This README explains the project and JavaScript concepts      |
-
----
-
-# Conclusion
-
-The SpendWise project has been extended from a visual dashboard into a basic JavaScript-powered budgeting application. The JavaScript foundation demonstrates how variables can store financial information, how user input can be collected and converted into numbers, and how functions can be used to perform reusable calculations.
-
-The application calculates the remaining budget and percentage of spending and displays the results in the browser console. The JavaScript functionality is kept in a separate `script.js` file while the existing HTML structure and CSS design remain separate.
-
-This provides a foundation for adding more advanced SpendWise features in future development.
